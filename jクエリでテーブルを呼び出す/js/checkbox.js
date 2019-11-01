@@ -10,7 +10,7 @@ $(function() {
 
     		 '<thead>'+
     		    '<tr>'+
-    		      '<th><input type="checkbox"id="all" /></th>'+
+    		      '<th><input type="checkbox" name="all" onClick="AllChecked();" /></th>'+
     		      '<th class="sort" data-sort="id">授業番号</th>'+
     		      '<th class="sort" data-sort="name">授業名</th>'+
     		      '<th class="sort" data-sort="nendo">年度</th>'+
@@ -23,7 +23,7 @@ $(function() {
 		'</thead>'+
 		'<tbody class="list">'+
     		    '<tr>'+
-    		      '<td><input type="checkbox" class="hantei" value="check"></td>'+
+    		      '<td><input type="checkbox" name="hantei" value="check"></td>'+
     		      '<td class="id">11111111</td>'+
     		      '<td class="name"><input type="text" value="DBA"></td>'+
     		      '<td class="nendo">2015</td>'+
@@ -34,7 +34,7 @@ $(function() {
     		      '<td><input type="button" value="詳細"></td>'+
     		    '</tr>'+
     		    '<tr>'+
-    		      '<td><input type="checkbox" class="hantei" value="check"></td>'+
+    		      '<td><input type="checkbox" name="hantei" value="check"></td>'+
     		      '<td class="id">11111112</td>'+
     		      '<td class="name"><input type="text" value="Java基礎"></td>'+
     		      '<td class="nendo">2015</td>'+
@@ -53,10 +53,6 @@ $(function() {
     		    '</td>'+
     		  '</form>'+
 '</div>');
-
-  $('#all').on("click",function(){
-    $('.hantei').prop("checked", $(this).prop("checked"));
-  });
 
 
  

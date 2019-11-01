@@ -2,19 +2,6 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>?e?[?u???T???v??</title>
-    <link type="text/css" media="screen" href="jqGrid/jquery-ui.min.css" rel="stylesheet" />
-    <link type="text/css" media="screen" href="jqGrid/css/ui.jqgrid.css" rel="stylesheet" />
-<style type="text/css">
-.side-menu {
- 	position: fixed;
-	top: 20vh;
-	right:0;
-	z-index:1;
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
 <title>テーブルサンプル</title>
 <style type="text/css">
 .side-menu {
@@ -23,6 +10,9 @@
 	right:0;
 	z-index:1;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -40,20 +30,16 @@
 <form action="MenuTableServlet" method="post">
 <table border="0">
   <tr>
-    <tr><td><input type="radio" name="radio" value="select" checked="checked">条件を指定<br></td></tr>
+    <tr><td><input type="radio" name="radio" value="select" checked="checked"/>条件を指定<br></td></tr>
 	<tr>
 	<td>年度</td>
 	<td>
-	<select name="年度">
-	<option value="1">1999</option>
-	<option value="2" selected>2000</option>
-	<option value="3">2001</option>
-	</select>年</td>
+	<input type="text" name="nendo" pattern="\d*" oncopy="return false" onpaste="return false" style="ime-mode:disabled" maxlength="4"/>年</td>
 	</tr>
 	<tr>
 	<td>種別</td>
 	<td>
-	<select name="種別">
+	<select name="種別" id="syubetu">
 	<option value="1">就職関連</option>
 	<option value="2" selected>プログラミング</option>
 	<option value="3">その他</option>
@@ -62,12 +48,12 @@
 	<tr>
 	<td>実施クラス</td>
 	<td>
-	<select name="クラス">
+	<select name="クラス" id="do_class">
 	<option value="1">1-A</option>
 	<option value="2" selected>1-B</option>
 	<option value="3">1-C</option>
 	</select><br>
-	<select name="期間">
+	<select name="期間" id="kikan">
 	<option value="1">前期</option>
 	<option value="2" selected>後期</option>
 	<option value="3">通年</option>
@@ -76,7 +62,7 @@
     </tr>
     <tr>
      <td><input type="radio" name="radio" value="select">授業番号直接入力<br>
-     <input type="text" value="">
+     <input type="text" value="" id="j_num">
      </td>
     </tr>
     
@@ -90,25 +76,58 @@
 
 </table>
 </form>
-<div>
 
+<div>
   <p></p>
 </div>
 
-  <!-- チェックボックスのJS -->
-  <script language="JavaScript" type="text/javascript">
-    function AllChecked(){
-    var all = document.table.all.checked;
-    for (var i=0; i<document.table.hantei.length; i++){
-      document.table.hantei[i].checked = all;
-    }
-  }
-  </script>
+
+
+
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/table.js"></script>
+<script src="js/sort.js"></script>
+<script src="js/list.min.js"></script>
 
-    <script type="text/javascript" src="jqGrid/js/jquery-1.11.0.min.js" ></script>
+
     <script type="text/javascript" src="jqGrid/js/jquery.jqGrid.min.js" ></script>
     <script type="text/javascript" src="jqGrid/js/i18n/grid.locale-ja.js" ></script>
+<!-- 入力制御 -->
+<script type="text/javascript">
+$(function(){
+     $('input[name="nendo"]').on('input', function(){
+          check_numtype($(this));
+     });
+});
+
+var _chknum_value = "";
+
+function check_numtype(obj){
+
+     
+     var txt_obj = $(obj).val();
+     var text_length = txt_obj.length;
+
+     
+     if(txt_obj.match(/^[0-9]+$/)){
+          
+          if(text_length > 9){
+               $('input[name="nendo"]').val(_chknum_value);
+          }else{
+               _chknum_value = txt_obj;
+          }
+     }else{
+          
+          if(text_length == 0){
+               _chknum_value = "";
+          }else{
+               $('input[name="nendo"]').val(_chknum_value);
+          }
+     }
+}
+
+</script>
+
+
 </body>
 </html>
