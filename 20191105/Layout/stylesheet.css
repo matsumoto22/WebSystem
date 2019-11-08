@@ -4,7 +4,7 @@ body{
   margin: auto;
 }
 main{
-  min-height: 100vh;
+  
   display: flex;
 }
 .topNavigation{
@@ -13,7 +13,10 @@ main{
   border-bottom: solid black 2px;
 }
 .sideNavigation{
-  width: 250px;
+  width: 274px;
+    height: 995px;
+    position: relative;
+    top: 84px;
   text-align: center;
   background-color: white;
   color: #fff;
