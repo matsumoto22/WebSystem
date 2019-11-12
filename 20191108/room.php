@@ -95,7 +95,7 @@ foreach($rows as $row){
 <?php
 if(isset($_POST['send']))
 {
-echo $_POST['roomtype'];
+
 include 'roomtable.php';
 }
 
