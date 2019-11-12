@@ -18,12 +18,12 @@ if ($mysqli->connect_error){
 }
 
 if(strcmp($value, "selecttype")==0){
-echo "はい。";
+
 $sql2 = "SELECT m_classroom.m_classroom_id, m_classroomform.m_classroomform_name FROM m_classroom LEFT JOIN m_classroomform ON m_classroom.m_classroomform_id = m_classroomform.m_classroomform_id WHERE m_classroomform.m_classroomform_name=\"".$_POST['roomtype']."\";";
 
 }else{
-echo $value;
-$sql2 = "SELECT m_classroom.m_classroom_id, m_classroomform.m_classroomform_name FROM m_classroom LEFT JOIN m_classroomform ON m_classroom.m_classroomform_id = m_classroomform.m_classroomform_id where m_classroom.m_classroom_id LIKE\"".$_POST['floor']."-%\";";
+
+$sql2 = "SELECT m_classroom.m_classroom_id, m_classroomform.m_classroomform_name FROM m_classroom LEFT JOIN m_classroomform ON m_classroom.m_classroomform_id = m_classroomform.m_classroomform_id where m_classroom.m_classroom_id LIKE\"".$_POST['floor']."%\";";
 
 }
 $result = $mysqli -> query($sql2);
