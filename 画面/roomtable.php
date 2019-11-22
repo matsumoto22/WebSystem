@@ -1,6 +1,6 @@
 ﻿<?php
-$roomt=$_POST['roomtype'];
-$floor=$_POST['floor'];
+$roomt = $_POST['roomtype'];
+$floor = $_POST['floor'];
 $value = $_POST['radio'];
 //データベース接続
 $server2 = "localhost";
@@ -50,8 +50,8 @@ $result->free();
 $mysqli->close();
 
 ?>
-
-
+<html>
+<body>
 <h1>出力結果</h1>
 
 
@@ -60,7 +60,6 @@ $mysqli->close();
 <tr>
 <th>教室</th>
 <th>教室タイプ</th>
-<th><button type="button">詳細</button>
 </tr>
 
 <?php
