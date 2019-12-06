@@ -1,0 +1,28 @@
+.thema{
+  position: relative;
+  top: -20px;
+  font-size: 25px;
+}
+.themavar{
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  position: relative;
+  top: -50px;
+}
+.textwrap{
+  position: relative;
+  top: -50px;
+}
+.choiceframe{
+  width: 100%;
+  height: 100px;
+  position: relative;
+  top: 10px;
+  border: solid black 2px;
+  border-radius: 10px;
+}
+.datachoice{
+  position: relative;
+  left: 5px;
+}
