@@ -1,20 +1,28 @@
-.thema{
+/* _txtは文字列 */
+
+.thema{     /* 題：学科コースデータ登録 */
   position: relative;
   top: -20px;
   font-size: 25px;
 }
-.themavar{
+.themavar{     /* テーマの下線 */
   width: 100%;
   height: 2px;
   background-color: black;
   position: relative;
   top: -50px;
 }
-.textwrap{
+.textwrap_all{     /* 全てのテキストに対して */
   position: relative;
   top: -50px;
 }
-.choiceframe{
+.textwrap_part{     /* 一部のテキスト(subject_txt～takingmodelname_txt) */
+  position: relative;
+  top: -20px;
+  left: 5px;
+  font-size: 17px;
+}
+.choiceframe{     /* 登録データ選択の枠 */
   width: 100%;
   height: 100px;
   position: relative;
@@ -22,7 +30,83 @@
   border: solid black 2px;
   border-radius: 10px;
 }
-.datachoice{
+.datachoice_txt{     /* 登録データ選択 */
   position: relative;
+  top: -10px;
   left: 5px;
+}
+label[for="radio-0"]{     /* ラジオボタン（学科） */
+  position: relative;
+  top: -15px;
+  left: 5px;
+}
+label[for="radio-1"]{     /* ラジオボタン（コース） */
+  position: relative;
+  top: -15px;
+  left: 5px;
+}
+.subjectwrap_txt{     /* 学科のテキストをラップ */
+  position: relative;
+  top: -5px;
+  left: 10px;
+}
+.course_txt{      /* コース */
+  position: relative;
+  top: -10px;
+}
+.coursewrap_txt{     /* コースのテキストをラップ */
+  position: relative;
+  top: -15px;
+  left: 10px;
+}
+#subject_id{     /* 学科番号のテキストボックス */
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 17px;
+  position: relative;
+  left: 55px;
+}
+#subject_name{     /* 学科名称のテキストボックス */
+  height: 20px;
+  font-size: 17px;
+  position: relative;
+  left: 55px;
+}
+#course_id{     /* コース番号のテキストボックス */
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 17px;
+  position: relative;
+  left: 42px;
+}
+#course_name{     /* コース名称のテキストボックス */
+  height: 20px;
+  font-size: 17px;
+  position: relative;
+  left: 42px;
+}
+#studyyears{     /* 修学年限のテキストボックス */
+  height: 20px;
+  font-size: 17px;
+  position: relative;
+  left: 60px;
+}
+#takingmodelname{     /* 履修モデル名称のテキストボックス */
+  height: 20px;
+  font-size: 17px;
+  position: relative;
+  left: 10px;
+}
+.registration_b{     /* 登録ボタン */
+  width: 80px;
+  height: 35px;
+  font-size: 20px;
+  position: relative;
+  top: -70px;
+  right: 50px;
+  float: right;
+  border-radius: 10px;
+  outline: none;
 }

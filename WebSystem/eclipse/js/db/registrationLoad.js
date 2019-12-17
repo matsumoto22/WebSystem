@@ -19,18 +19,19 @@ $(document).ready( function(){
           let result = str.substr( 0, 1 );
           let number = str.substr( 1, 2);
 
-          let a = Number(number) + 1;
-          a = String(a);
+          let numeral = Number(number) + 1;
+          numeral = String(numeral);
 
-          if(a.length == 1){
-            a = '0' + a;
+          if(numeral.length == 1){
+            numeral = '0' + numeral;
           }
-          a = result + a;
+          numeral = result + numeral;
 
           console.log( result );
-          console.log( a );
+          console.log( numeral );
     		for(let i = 0; i < Object.keys(studentDate).length; i++){
-            $("#subject_id").val(a);
+            $("#subject_id").val(numeral);
+            $("#course_id").val(numeral);
         	}
     	};
 	}

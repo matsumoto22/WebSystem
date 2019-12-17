@@ -38,7 +38,7 @@ require('../Layout/Layout.php');
         <div class="searchbox_txtwrapper">
             <p class="searchbox_txt1">検索項目</p>
             <p class="searchbox_txt2">学科名称
-            <input type="text" class="textbox" name="a">
+            <input type="text" class="subject_txtbox" name="subject_txtbox">
             <input type="text" class="textbox" name="a"></p>
             <p class="searchbox_txt3">コース名称
             <input type="text" class="textbox" name="a">

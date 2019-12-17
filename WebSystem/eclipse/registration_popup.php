@@ -8,15 +8,13 @@
 <body>
   <p class="thema">学科・コースデータ登録</p>
   <div class="themavar"></div>
-  <div class="textwrap">
+  <div class="textwrap_all">
     <div class="choiceframe">
-  <div class="datachoice">
-  <p>登録データ選択</p>
+  <p class="datachoice_txt">登録データ選択</p>
   <form name="courseInfo" id="courseInfo" method="post" action="#">
-    <input type="radio" name="number" value="学科" id="radio-0" checked onClick="changeDisabled()" required><label for="radio-0">学科</label>
+    <label for="radio-0"><input type="radio" name="number" value="学科" id="radio-0" checked onClick="changeDisabled()" required>学科</label>
   <br>
-    <input type="radio" name="number" value="コース" id="radio-1" onClick="changeDisabled()"><label for="radio-1">コース</label>
-  </div>
+    <label for="radio-1"><input type="radio" name="number" value="コース" id="radio-1" onClick="changeDisabled()">コース</label>
     </div>
   <br>
 
@@ -24,7 +22,7 @@
 
   function changeDisabled() {
       if ( document.courseInfo["number"][0].checked ) {
-          document . courseInfo["subject_id"] . disabled = false;
+          document . courseInfo["subject_id"] . disabled = true;
           document . courseInfo["subject_name"] . disabled = false;
           document . courseInfo["course_id"] . disabled = true;
           document . courseInfo["course_name"] . disabled = true;
@@ -33,7 +31,7 @@
       } else {
           document . courseInfo["subject_id"] . disabled = true;
           document . courseInfo["subject_name"] . disabled = true;
-          document . courseInfo["course_id"] . disabled = false;
+          document . courseInfo["course_id"] . disabled = true;
           document . courseInfo["course_name"] . disabled = false;
           document . courseInfo["studyyears"] . disabled = false;
           document . courseInfo["takingmodelname"] . disabled = false;
@@ -42,18 +40,23 @@
   window.onload = changeDisabled;
 
   </script>
-  <p>学科</p>
-  <p>学科番号<input type="text" name="subject_id" id="subject_id"></p>
-  <p>学科名称<input type="text" name="subject_name"id="subject_name"></p>
-  <p>コース</p>
-  <p>コース番号<input type="text" name="course_id" id="course_id"></p>
-  <p>コース名称<input type="text" name="course_name" id="course_name"></p>
-  <p>修学年限<input type="text" neme="studyyears" id="studyyears"></p>
-  <p>履修モデル名称<input type="text" name="takingmodelname" id="takingmodelname"></p>
+  <div class="textwrap_part">
+    <p class="subject_txt">学科</p>
+    <div class="subjectwrap_txt">
+      <p class="subject_id_txt">学科番号<input type="text" name="subject_id" id="subject_id"></p>
+      <p class="subject_name_txt">学科名称<input type="text" name="subject_name"id="subject_name"></p>
+    </div>
+    <p class="course_txt">コース</p>
+    <div class="coursewrap_txt">
+      <p class="course_id_txt">コース番号<input type="text" name="course_id" id="course_id"></p>
+      <p class="course_name_txt">コース名称<input type="text" name="course_name" id="course_name"></p>
+      <p class="studyyears_txt">修学年限<input type="text" neme="studyyears" id="studyyears"></p>
+      <p class="takingmodelname_txt">履修モデル名称<input type="text" name="takingmodelname" id="takingmodelname"></p>
+    </div>
   </form>
-
+  </div>
 </div>
-  <button type="button">登録</button>
+  <button type="button" class="registration_b">登録</button>
 </body>
 
 <script type="text/javascript" src="jqGrid/jquery-3.4.1.min.js" ></script>
