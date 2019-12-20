@@ -31,7 +31,6 @@ $(document).ready( function(){
           console.log( numeral );
     		for(let i = 0; i < Object.keys(studentDate).length; i++){
             $("#subject_id").val(numeral);
-            $("#course_id").val(numeral);
         	}
     	};
 	}

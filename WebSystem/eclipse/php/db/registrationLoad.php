@@ -15,9 +15,14 @@ if (!$oraConn) {
 
 $sqlString =
 'SELECT
-m_subject_id
+m_s.m_subject_id,
+m_c.m_course_id
 FROM
-m_subject';
+m_subject m_s
+JOIN
+m_course m_c
+ON
+m_s.m_subject_id = m_c.m_subject_id';
 
 $statementId = oci_parse($oraConn, $sqlString);
 oci_execute($statementId);

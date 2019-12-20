@@ -20,7 +20,7 @@ require('../Layout/Layout.php');
             <input class="registration_b_img" type="image" src="../Layout/image/registration.png" alt="登録" />
                 登録
         </button>
-        <!-- 【ここから】新しいウィンドでブラウザを起動し、ポップアップ表示 -->
+        <!-- 【ここから】新しいウィンドウでブラウザを起動し、ポップアップ表示 -->
         <script>
         var myWindow;
         function openWin() {
@@ -28,7 +28,7 @@ require('../Layout/Layout.php');
             // myWindow.document.write("教室データ登録<hr>");
         }
         </script>
-        <!-- 【ここまで】新しいウィンドでブラウザを起動し、ポップアップ表示 -->
+        <!-- 【ここまで】新しいウィンドウでブラウザを起動し、ポップアップ表示 -->
     </div>
 </div>
 
@@ -39,12 +39,12 @@ require('../Layout/Layout.php');
             <p class="searchbox_txt1">検索項目</p>
             <p class="searchbox_txt2">学科名称
             <input type="text" class="subject_txtbox" name="subject_txtbox">
-            <input type="text" class="textbox" name="a"></p>
+            <input type="text" class="subjectid_txtbox" name="subjectid_txtbox"></p>
             <p class="searchbox_txt3">コース名称
-            <input type="text" class="textbox" name="a">
-            <input type="text" class="textbox" name="a"></p>
+            <input type="text" class="course_txtbox" name="course_txtbox">
+            <input type="text" class="courseid_txtbox" name="courseid_txtbox"></p>
             <p class="searchbox_txt3">修学年限
-            <input type="text" class="textbox" name="a"></p>
+            <input type="text" class="studyyears_txtbox" name="studyyears_txtbox"></p>
             <button class="search_b" type="button" id="search_studentInfo" name="search">検索</button>
         </div>
     </form>
